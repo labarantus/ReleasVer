@@ -289,16 +289,7 @@
                                       <a href="{{ url_for('film_update', id=i.film_id) }} " class="btn btn-success">Изменить</a>
                                     {% endif %}
                                 </p>
-                                  <p> Ваша оценка:
-                                        <span class="d-inline-block scorePopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus">
-                                        <button type="button" class="btn btn-success btn-sm" style="background-color: #3BB33B; border-color: #3BB33B;" data-bs-toggle="modal" data-bs-target="#exampleModal{{i.film_id-1}}" >
-                                         {% if i.score != 0 %}
-                                                {{ i.score }}
-                                            {% else %} -
-                                            {% endif %}
-                                        </button>
-                                      </span>
-                                  </p>
+                                  
                               </div>
                             </div>
                           </div>
@@ -432,16 +423,7 @@
                                       <a href="{{ url_for('film_update', id=i.film_id) }} " class="btn btn-success">Изменить</a>
                                     {% endif %}
                                 </p>
-                                  <p> Ваша оценка:
-                                  <span class="d-inline-block scorePopover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus">
-                                        <button type="button" class="btn btn-success btn-sm" style="background-color: #3BB33B; border-color: #3BB33B;" data-bs-toggle="modal" data-bs-target="#exampleModal{{i.film_id-1}}" >
-                                         {% if i.score != 0 %}
-                                                {{ i.score }}
-                                            {% else %} -
-                                            {% endif %}
-                                        </button>
-                                      </span>
-                                  </p>
+                                  
                               </div>
                             </div>
                           </div>
