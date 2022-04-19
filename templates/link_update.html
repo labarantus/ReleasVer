@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container-sm reg-container">
+        <div class="row">
+            <div class="col-xl"></div>
+            <div class="col-sm outline-col">
+                <div class="mb-3">
+                    <form action="" class="reg-form", method="post" enctype="multipart/form-data">
+                        {{ form.csrf_token() }}
+                        <h3>Изменение ссылки</h3>
+                        <p> {{ form.link(value=info.link)}} </p>
+                        <p>{{ form.submit(value="Сохранить") }}</p>
+
+                        {% if form.errors %}
+                        <div class="form-group alert alert-danger" style="margin-top: 10px;">
+                            {% for field, errors in form.errors.items() %}
+                            {{ ', '.join(errors) }}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-xl"></div>
+        </div>
+
+    </div>
+
+{% endblock %}

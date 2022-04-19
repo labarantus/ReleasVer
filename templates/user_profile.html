@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body xmlns="http://www.w3.org/1999/html">
+    <section class="h-100 gradient-custom-2">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="card">
+                <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+                  <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                    <img src="{{ url_for('userava') }}" class="img-fluid img-thumbnail mt-4 mb-2 rounded-circle" style="width: 150px; z-index: 1; height: 150px;">
+                    <a class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;" href="{{ url_for('edit_profile') }}">
+                      Редактировать профиль
+                    </a>
+                  </div>
+                  <div class="ms-3" style="margin-top: 90px;">
+                    <h5>{{ current_user.name }}</h5>
+                    <p>Дата регистрации: {{ moment(current_user.date_reg).format('LL') }}</p>
+                  </div>
+                </div>
+                <div class="p-4 text-black" style="background-color: #f8f9fa;">
+                  <div class="d-flex justify-content-end text-center py-1">
+                    <div class="px-3">
+                      <p class="mb-1 h5">{{film_count}}</p>
+                      <p class="small text-muted mb-0">Фильмы</p>
+                    </div>
+                    <div>
+                      <p class="mb-1 h5">{{serial_count}}</p>
+                      <p class="small text-muted mb-0">Сериалы</p>
+                    </div>
+                  </div>
+                </div>
+                  <div class="container">
+                      <div class="row justify-content-center mb-5">
+                          <div class="col-sm-3 text-center p-2" style="margin-left: 5%; margin-right: 5%;">
+                              <div class="round-block rounded-circle" style="margin-left: 28%; color: white; height: 125px; width: 125px; background: #0a58ca;">
+                                  <div class="row align-items-center">
+                                      <div class="col" style="margin-top: 30%;"><span style="font-family: 'Oswald', sans-serif; font-size: 30px;">{{ all_film_hours }}</span> <br> часов</div>
+                                  </div>
+                              </div>
+                              <div class="col text-center">Именно столько времени вы потратили на фильмы.</div>
+                          </div>
+                         <div class="col-sm-3 text-center p-2" style="margin-left: 5%; margin-right: 5%;">
+                              <div class="round-block rounded-circle" style="margin-left: 28%; color: white; height: 125px; width: 125px; background: #0a58ca;">
+                                  <div class="row align-items-center">
+                                      <div class="col" style="margin-top: 30%;"><span style="font-family: 'Oswald', sans-serif; font-size: 30px;">{{ all_serial_hours}}</span> <br> часов</div>
+                                  </div>
+                              </div>
+                              <div class="col text-center">Именно столько времени вы потратили на сериалы.</div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+                <!-- Button trigger modal -->
+
+          </div>
+        </div>
+      </section>
+</body>
+
+{% endblock %}
